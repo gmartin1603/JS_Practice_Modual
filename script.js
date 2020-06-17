@@ -97,3 +97,80 @@ function rpsFrontEnd(humanImageChoice,botImageChoice, finalMessage) {
 
 }
 
+//Challenge 4: Changing the color of all the buttons.
+
+let allButtons = document.getElementsByTagName("button");
+let copyAllButtons = [];
+
+for (let i=0; i < allButtons.length; i++) {
+    copyAllButtons.push(allButtons[i].classList[1]);
+}
+console.log(copyAllButtons);
+
+
+
+function buttonColorChange(option) {
+    if (option.value === 'red') {
+        buttonsRed();
+    }
+    else if (option.value ==='green') {
+        buttonsGreen();
+    }
+    else if (option.value === 'yellow') {
+        buttonsYellow();
+    }
+    else if (option.value ==='blue') {
+        buttonsBlue();
+    }
+    else if (option.value === 'random') {
+        buttonsRandom();
+    }
+    else if (option.value ==='reset') {
+        buttonsReset();
+    }
+}
+
+function buttonsRed() {
+    for (let i = 0; i < allButtons.length; i++) {
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add('btn-danger');
+    }
+}
+
+function buttonsGreen() {
+    for (let i = 0; i < allButtons.length; i++) {
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add('btn-success');
+    }
+}
+
+function buttonsYellow() {
+    for (let i = 0; i < allButtons.length; i++) {
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add('btn-warning');
+    }
+}
+
+function buttonsBlue() {
+    for (let i = 0; i < allButtons.length; i++) {
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add('btn-primary');
+    }
+}
+
+function buttonsRandom() {
+    let randomChoices = ['btn-danger', 'btn-primary', 'btn-warning', 'btn-success']
+    
+    for (let i = 0; i < allButtons.length; i++) {
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        let randomChoice = randomChoices[Math.floor(Math.random()*randomChoices.length)]; 
+        allButtons[i].classList.add(randomChoice);
+    }
+}
+
+function buttonsReset() {
+    for (let i = 0; i < allButtons.length; i++) {
+        allButtons[i].classList.remove(allButtons[i].classList[1]);
+        allButtons[i].classList.add(copyAllButtons[i]);
+    }
+}
