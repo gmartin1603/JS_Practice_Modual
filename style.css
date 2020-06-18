@@ -3,12 +3,12 @@
     justify-content: space-around;
 }
 
-#cat-gen-btn:hover {
+#cat-gen-btn:hover, #deal-btn:hover {
     box-shadow: 0px 0px 15px 10px #00FF00;
     transition: ease-in-out .2s;    
 }
 
-#click-me:hover {
+#click-me:hover, #hit-btn:hover {
     box-shadow: 0px 0px 15px 10px #0033FF;
     transition: ease-in-out .2s;
 }
@@ -18,7 +18,7 @@
     transition: ease-in-out .2s;
 }
 
-.container-1, .container-2, .container-3, .container-4 {
+.container-1, .container-2, .container-3, .container-4, .container-5 {
     padding-top: 10px;
     border: 1px solid rebeccapurple;
     width: 75%;
@@ -26,13 +26,53 @@
     text-align: center;
 }
 
-.flex-box-container, .flex-box-rps, .flex-box-buttons {
-    
+.flex-box-container, .flex-box-rps, .flex-box-buttons, .flex-blackjack-row-1, 
+.flex-blackjack-row-2, .flex-blackjack-row-3 {
     border: 1px solid blue;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.flex-blackjack-row-1 {
+    background-image: url("assets/blackjack_assets/cards/BJ_background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #ffff;
+}
+
+.flex-blackjack-row-2 {
+    background-color: black;
+}
+
+.flex-blackjack-row-1 div {
+    padding: 10px;
+    height: 350px;
+    text-align: center;
+    flex: 1;
+}
+
+.flex-blackjack-row-2 button {
+    padding: 10px;
+}
+
+.flex-blackjack-row-2 div {
+    border: 1px solid black;
+
+}
+
+
+.flex-blackjack-row-3 {
+    background-color: black;
+}
+
+table, th, td {
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: gold;
 }
 
 .flex-box-container img {

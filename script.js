@@ -174,3 +174,32 @@ function buttonsReset() {
         allButtons[i].classList.add(copyAllButtons[i]);
     }
 }
+
+//Challenge 5: BlackJack!
+
+
+let blackjackGame = {
+    'you': {'scoreSpan':'#your-blackjack-result', 'div':'#your-box', 'score':0},
+    'dealer': {'scoreSpan':'#dealer-blackjack-result', 'div':'#dealer-box', 'score':0}
+    
+}
+let deck = [{'ac':0}, {'2c':2} , {'3c':3}, {'4c':4}, {'5c':5}, {'6c':6}, {'7c':7}, {'8c':8}, {'9c':9}, {'10c':10}, {'jc':10}, {'qc':10}, {'kc':10}];
+
+const YOU = blackjackGame['you']
+const DEALER = blackjackGame['dealer']
+const hitSound = new Audio("assets/blackjack_assets/sounds/swish.m4a")
+
+document.querySelector("#deal-btn").addEventListener("click", dealCards);
+document.querySelector("#hit-btn").addEventListener("click", showHit(DEALER));
+
+function dealCards() {
+    //deal 2 cards face up on "you" side and 1 up 1 down on "dealer" side
+}
+
+
+function showHit(activePlayer) {
+    let cardImage = document.createElement("img");
+    cardImage.src = "assets/blackjack_assets/cards/AD.png";
+    document.querySelector(activePlayer['div']).appendChild(cardImage).width = "100";
+    hitSound.play();
+}
