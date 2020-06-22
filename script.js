@@ -295,7 +295,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-stand = (DEALER, YOU) => {
+async function stand(DEALER, YOU) {
     if (YOU['score'] <= 21){
         while (DEALER['score'] <= YOU['score'] && DEALER['score'] < 21 && blackjackGame['isStand'] === true) {
             //returned value of "pickCard()"
@@ -305,7 +305,7 @@ stand = (DEALER, YOU) => {
             showHit(val, DEALER);
             tallyScore(card, DEALER);
             showScore(DEALER);
-            //await sleep(500);      
+            await sleep(500);      
         }
     }
     else {
