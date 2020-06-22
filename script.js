@@ -218,7 +218,6 @@ function dealerTurn() {
         blackjackGame['isStand'] = true;
         stand(DEALER, YOU);
         getWinner(DEALER, YOU);
-        blackjackGame['turnsOver'] = true;
     }
 }
 
@@ -312,6 +311,7 @@ async function stand(DEALER, YOU) {
     printWinner(getWinner(DEALER, YOU));
     }
     printWinner(getWinner(DEALER, YOU));
+    blackjackGame['turnsOver'] = true;
 }
 
 getWinner = (DEALER, YOU)=> {
